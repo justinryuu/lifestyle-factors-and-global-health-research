@@ -88,5 +88,34 @@ diagonal line, we can conclude that they are Normally distributed.
 If any of these four assumptions are not satisfied, the model will not be as effective as we need to properly
 explain the relationship between the predictors and the response.
 
+## Data Introduction and Description
+
+The data used in this analysis has primarily been gathered from the WHO and World Bank’s data libraries,
+and is compiled into one dataframe. All data is reported for the year 2019.
+
+### Response: Life Expectancy
+Life expectancy data was gathered from the WHO, and reports life expectancy at birth for both sexes for
+each WHO member state.
+
+### Predictor 1: Population
+Population data was gathered from the World Bank, and reports the total population of each UN member
+state.
+
+### Predictor 2: Alcohol Consumption
+Alcohol consumption data was gathered from the WHO, and reports levels of total alcohol consumption
+reported per capita for each WHO member state.
+
+### Predictor 3: GDP
+GDP data was gathered from the World Bank, and reports countries’ GDP per capita in current US dollars.
+
+### Predictor 4: Education
+Education is measured in mean years of schooling of a country’s population aged 25 years or older. This
+data was gathered from the World Bank.
+
+### Predictor 5: Development Status
+Development status data was retrieved from a 2018 open-source dataset titled “Life Expectancy (WHO)”,
+which is a collection of data supplied by the WHO and United Nations.
+
+
 
 

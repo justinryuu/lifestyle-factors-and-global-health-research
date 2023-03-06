@@ -116,3 +116,217 @@ Development status data was retrieved from a 2018 open-source dataset titled [â€
 <p align="center">
   <img src="images/f2.png" width="80%" height="80%">
 </p>
+
+The skews observable in these histograms are due to disparities in these socioeconomic factors around
+the world. These distributions in themselves should cause no issues for our analysis, however; it is the
+distributions of the residuals we will be concerned with in further sections.
+
+## Creating the Training and Test Datasets
+Below are the summary statistics for the training and test datasets:
+
+<p align="center">
+  <img src="images/f3.png" width="80%" height="80%">
+</p>
+
+While there are slight differences in some measures, we can safely move forward knowing that the training
+and test data are relatively similar.
+
+# Building the Model
+We will begin the process of building the model by first examining the full model with all predictors.
+
+<p align="center">
+  <img src="images/f4.png" width="80%" height="80%">
+</p>
+
+The p-values of Developing Status, Population, and Alcohol Consumption appear to be quite high; this
+could suggest that excluding these less significant variables could improve our model. We will see if we can
+determine a better model by minimizing the AIC.
+
+### Forward Selection
+
+<p align="center">
+  <img src="images/f5.png" width="80%" height="80%">
+</p>
+
+### Backwards Elimination
+
+<p align="center">
+  <img src="images/f6.png" width="80%" height="80%">
+</p>
+
+### Stepwise Selection
+
+<p align="center">
+  <img src="images/f7.png" width="80%" height="80%">
+</p>
+
+Each of these summaries suggest that Education and GDP should be the only predictors included in the
+model. Since the p-values for the omitted predictors are large, we conclude that they do little to explain
+changes in life expectancy. The contextual interpretation of this result is also reasonable, as it suggests
+that education and GDP are perhaps the most significant of these factors that contribute to life expectancy.
+Below is the summary of the proposed final model:
+
+<p align="center">
+  <img src="images/f8.png" width="80%" height="80%">
+</p>
+
+And the equation of the proposed final model is as follows:
+
+<p align="center">
+  <img src="images/f9.png" width="80%" height="80%">
+</p>
+
+## Model Violations and Diagnostics
+As explained in the Methods section, we must first check that the two conditions are satisfied before conducting
+residual plot analysis.
+
+<p align="center">
+  <img src="images/f10.png" width="80%" height="80%">
+</p>
+
+The fitted values are randomly scattered around the identity function, so we conclude that Condition 1
+is satisfied. A problem arises when examining the plot between the predictors; there appears to be an
+exponential relationship which would result in Condition 2 being violated. In order for this model to meet
+this condition, we will perform a log transformation on the GDP predictor.
+
+Below is the repeated diagnosis of these two conditions with the transformed predictor:
+
+<p align="center">
+  <img src="images/f11.png" width="80%" height="80%">
+</p>
+
+The plots show that the transformation allows Condition 2 to be satisfied. Condition 1 also remains satisfied.
+
+### Residual Plot Analysis
+Here we conduct a residual plot analysis as detailed in the Methods section.
+
+<p align="center">
+  <img src="images/f12.png" width="80%" height="80%">
+</p>
+
+The residuals do not show any distinct trends or relationships and appear to be relatively spaced out, which
+is sufficient to conclude that the first three assumptions of linear regression are satisfied.
+
+In order to evaluate the Normality assumption, we examine the Normal QQ plot:
+
+<p align="center">
+  <img src="images/f13.png" width="80%" height="80%">
+</p>
+
+The plot shows that the residuals are relatively but not perfectly Normally distributed, with left skew
+exhibited by the deviation of the lower tail. However, we will proceed hoping that Normality will hold better
+in an independent dataset as most points lie on the QQ line, noting this as a potential limitation.
+
+The final model for our analysis is as follows:
+
+<p align="center">
+  <img src="images/f14.png" width="80%" height="80%">
+</p>
+
+## Goodness of the Final Model
+As explained in the Methods section, the model is validated if there are no stark differences between its
+performance on the test data versus its performance on the training data.
+
+### Model Characteristics Fit to Test Data
+Below is a comparison of the model characteristics when fit to the test data versus the training data:
+
+<p align="center">
+  <img src="images/f15.png" width="80%" height="80%">
+</p>
+
+The characteristics of the model in each dataset are similar enough to say that its performance would be
+the same in an independent dataset. Additionally, the adjusted R-squared for the model fit on the training
+data is 0.6651, and on the test data is 0.7313; there is a slight difference but we believe that it is not large
+enough to cause concern.
+
+### Model Violations and Diagnostics in Test Data
+The last step in our verification process is to assess whether model assumptions have changed by repeating
+our model diagnostics process using the test data.
+
+<p align="center">
+  <img src="images/f16.png" width="80%" height="80%">
+</p>
+
+As is the case for the training data, these plots suggest that the model fitted to the test data also satisfies
+Conditions 1 and 2.
+
+Now we can proceed with residual plot analysis on the test data.
+
+<p align="center">
+  <img src="images/f17.png" width="80%" height="80%">
+</p>
+
+The residual plots appear randomly scattered, which indicates that the first three assumptions of linear
+regression (Linearity, Uncorrelated Errors, Homoscedasticity) are satisfied.
+
+Again, to assess the Normality assumption we use a Normal QQ plot:
+
+<p align="center">
+  <img src="images/f18.png" width="80%" height="80%">
+</p>
+
+This QQ plot better satisfies the Normality assumption. This suggests that the skew seen in the training
+data could have simply been a result of random variation. We can now say with confidence that the model
+meets all assumptions, and therefore the model is sufficiently validated.
+
+# Results and Discussion
+
+## Final Model Interpretation and Importance
+The equation for our final regression model is as follows:
+
+<p align="center">
+  <img src="images/f19.png" width="80%" height="80%">
+</p>
+
+Each of the terms in the regression model have meaningful interpretations that can lead us to a useful
+conclusion for our analysis.
+
+**Intercept:** The average lifespan in a country with zero education or GDP is 40.88 years.
+
+**Education:** For each additional year of education completed on average, the mean life expectancy of a
+country will increase by 0.26 years for both genders. This is a significant result, as a quarter-year of
+additional life per year of schooling suggests that education is a key factor to longevity.
+
+**log(GDP):** Since a log-transformation was performed, [we interpret this result differently](https://data.library.virginia.edu/interpreting-log-transformations-in-a-linear-model/). Our interpretation is that for a 1% increase in GDP per capita of a country, the average life expectancy for both genders will increase by 0.035 (3.5/100) years. While this increase seems like a small number, it is important to understand that GDP per capita is a metric whose values vary wildly (see Numerical and Visual Summaries), and so the gains in life expectancy caused by a growth in GDP is more significant than this number suggests.
+
+# Conclusion
+Education and GDP were defined in this report as being significant contributors to life expectancy, however
+it is not as easy to simply increase a countryâ€™s GDP than it is to expand education. Therefore, this report
+concludes that the expansion of education is perhaps the most important socioeconomic change that can
+prolong life. Additionally, we determined that Population, Alcohol Consumption, and Development Status
+were not significantly related to life expectancy.
+
+## Model Limitations
+There were two primary limitations in this analysis that could have affected the efficacy of the model, or our
+conclusions.
+
+**1. Without transformation, the data would not have been suitable for linear regression.**
+A transformation was conducted on the GDP variable in the Model Diagnostics section, as the assumptions
+for linear regression would have been violated otherwise. This suggests that the data in its original state might
+not have been appropriate for use in regression, and we also had to interpret the result of the transformed
+variable differently.
+
+**2. The model fitted to training data struggled to satisfy the Normality assumption.**
+Initially it seemed the model struggled to meet the Normality assumption, however this concern was mostly
+resolved upon fitting the model to our test data.
+
+# References
+
+Costa de Souza, F. (2018). Life expectancy and healthy life expectancy changes between 2000 and 2015: an
+analysis of 183 World Health Organization member states. Journal of Public Health, 26, 261-269.
+
+Mondal, Md. and Shitan, M. (2014). Relative Importance of Demographic, Socioeconomic and Health
+Factors on Life Expectancy in Low- and Lower-Middle-Income Countries. J-Stage Journal of Epidemiology,
+Volume 24 Issue 2. 117-124.
+
+WHO. (2019). Life expectancy at birth (years). The Global Health Observatory.
+
+The World Bank. (2020). Population, total.
+
+WHO. (2019). Levels of Consumption. The Global Health Observatory.
+
+The World Bank. (2020). GDP per capita (current US$).
+
+The World Bank. (2019). GCI 4.0: Mean years of schooling. TCdata360.
+
+Rajarshi, K. (2018). Life Expectancy (WHO). Kaggle.

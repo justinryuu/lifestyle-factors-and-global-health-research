@@ -94,27 +94,22 @@ The data used in this analysis has primarily been gathered from the WHO and Worl
 and is compiled into one dataframe. All data is reported for the year 2019.
 
 ### Response: Life Expectancy
-Life expectancy data was gathered from the WHO, and reports life expectancy at birth for both sexes for
-each WHO member state.
+[Life expectancy data was gathered from the WHO](https://www.who.int/data/gho/data/indicators/indicator-details/GHO/life-expectancy-at-birth-(years)), and reports life expectancy at birth for both sexes for each WHO member state.
 
 ### Predictor 1: Population
-Population data was gathered from the World Bank, and reports the total population of each UN member
-state.
+[Population data was gathered from the World Bank](https://data.worldbank.org/indicator/SP.POP.TOTL?end=2020&start=2018), and reports the total population of each UN member state.
 
 ### Predictor 2: Alcohol Consumption
-Alcohol consumption data was gathered from the WHO, and reports levels of total alcohol consumption
-reported per capita for each WHO member state.
+[Alcohol consumption data was gathered from the WHO](https://www.who.int/data/gho/data/themes/topics/topic-details/GHO/levels-of-consumption), and reports levels of total alcohol consumption reported per capita for each WHO member state.
 
 ### Predictor 3: GDP
-GDP data was gathered from the World Bank, and reports countries’ GDP per capita in current US dollars.
+[GDP data was gathered from the World Bank](https://data.worldbank.org/indicator/NY.GDP.PCAP.CD), and reports countries’ GDP per capita in current US dollars.
 
 ### Predictor 4: Education
-Education is measured in mean years of schooling of a country’s population aged 25 years or older. This
-data was gathered from the World Bank.
+Education is measured in mean years of schooling of a country’s population aged 25 years or older. [This data was gathered from the World Bank.](https://tcdata360.worldbank.org/indicators/h22a4bb2b?country=BRA&indicator=41393&viz=line_chart&years=2017,2019)
 
 ### Predictor 5: Development Status
-Development status data was retrieved from a 2018 open-source dataset titled “Life Expectancy (WHO)”,
-which is a collection of data supplied by the WHO and United Nations.
+Development status data was retrieved from a 2018 open-source dataset titled [“Life Expectancy (WHO)”](https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who), which is a collection of data supplied by the WHO and United Nations.
 
 
 

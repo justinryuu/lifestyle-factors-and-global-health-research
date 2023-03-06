@@ -135,7 +135,7 @@ and test data are relatively similar.
 We will begin the process of building the model by first examining the full model with all predictors.
 
 <p align="center">
-  <img src="images/f4.png" width="80%" height="80%">
+  <img src="images/f4.png" width="50%" height="50%">
 </p>
 
 The p-values of Developing Status, Population, and Alcohol Consumption appear to be quite high; this
@@ -167,13 +167,13 @@ that education and GDP are perhaps the most significant of these factors that co
 Below is the summary of the proposed final model:
 
 <p align="center">
-  <img src="images/f8.png" width="80%" height="80%">
+  <img src="images/f8.png" width="40%" height="40%">
 </p>
 
 And the equation of the proposed final model is as follows:
 
 <p align="center">
-  <img src="images/f9.png" width="80%" height="80%">
+  <img src="images/f9.png" width="60%" height="60%">
 </p>
 
 ## Model Violations and Diagnostics
@@ -210,7 +210,7 @@ is sufficient to conclude that the first three assumptions of linear regression 
 In order to evaluate the Normality assumption, we examine the Normal QQ plot:
 
 <p align="center">
-  <img src="images/f13.png" width="80%" height="80%">
+  <img src="images/f13.png" width="50%" height="50%">
 </p>
 
 The plot shows that the residuals are relatively but not perfectly Normally distributed, with left skew
@@ -220,7 +220,7 @@ in an independent dataset as most points lie on the QQ line, noting this as a po
 The final model for our analysis is as follows:
 
 <p align="center">
-  <img src="images/f14.png" width="80%" height="80%">
+  <img src="images/f14.png" width="60%" height="60%">
 </p>
 
 ## Goodness of the Final Model
@@ -262,7 +262,7 @@ regression (Linearity, Uncorrelated Errors, Homoscedasticity) are satisfied.
 Again, to assess the Normality assumption we use a Normal QQ plot:
 
 <p align="center">
-  <img src="images/f18.png" width="80%" height="80%">
+  <img src="images/f18.png" width="60%" height="60%">
 </p>
 
 This QQ plot better satisfies the Normality assumption. This suggests that the skew seen in the training
@@ -275,7 +275,7 @@ meets all assumptions, and therefore the model is sufficiently validated.
 The equation for our final regression model is as follows:
 
 <p align="center">
-  <img src="images/f19.png" width="80%" height="80%">
+  <img src="images/f19.png" width="60%" height="60%">
 </p>
 
 Each of the terms in the regression model have meaningful interpretations that can lead us to a useful

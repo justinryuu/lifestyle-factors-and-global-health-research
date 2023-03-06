@@ -1,3 +1,4 @@
+![Figure_6](https://user-images.githubusercontent.com/126818272/222994986-66e17356-04be-42a3-b60f-e9d391059690.png)
 # The Impact of Health-Adjacent Lifestyle Factors in Global Health
 
 <p align="center">

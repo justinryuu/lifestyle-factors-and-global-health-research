@@ -114,5 +114,5 @@ Development status data was retrieved from a 2018 open-source dataset titled [â€
 ## Numerical and Visual Summaries
 
 <p align="center">
-  <img src="images/f1.jpg" width="80%" height="80%">
+  <img src="images/f2.jpg" width="80%" height="80%">
 </p>
